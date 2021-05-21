@@ -52,10 +52,12 @@
 import Select from "../components/ui/Select";
 import InputCheck from "../components/ui/InputCheck";
 import Button from "../components/ui/Button";
-import ProductCardComponent from "../components/ProductCardComponent";
-import PaginationCatalog from "../components/catalog-components/PaginationCatalog";
+import ProductCardComponent from "../components/ProductCard";
+import PaginationCatalog from "../components/catalog/PaginationCatalog";
+
 
 import {mapGetters} from "vuex/dist/vuex.mjs";
+
 
 export default {
     components: { PaginationCatalog, ProductCardComponent, Button, InputCheck, Select},
@@ -139,9 +141,6 @@ export default {
         SEARCH_VALUE() {
             this.sortProductsBySearchValue(this.SEARCH_VALUE)
         }
-    },
-    breadcrumb () {
-
     }
 }
 </script>

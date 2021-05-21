@@ -92,7 +92,7 @@ import {required, minLength, maxLength, email} from 'vuelidate/lib/validators'
 
 
 export default {
-    name: 'FeedbackComponent',
+    name: 'Feedback',
     components: {InputTextarea, Button, InputCheck},
     data() {
         return ({

@@ -7,7 +7,7 @@
                 :key="'item' + index"
             >
                 <div class="basket-item__img">
-                    <img :src="`/images/products/${item.img}`" :alt="item.name">
+                    <img :src="require(`@/assets/images/products/${item.img}`)" :alt="item.name">
                 </div>
                 <p class="basket-item__name">{{ item.name }}</p>
                 <p class="basket-item__price">{{ item.quantity }}&nbsp;х&nbsp;<span>{{ item.price }}&nbsp;руб</span></p>
@@ -48,7 +48,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 
 .basket-item {
     display: flex;

@@ -1,13 +1,23 @@
 <template>
     <div class="validate">
-        <p class="validate__message" v-for="message in this.messages">{{ message }}</p>
+        <p
+          class="validate__message"
+          v-for="message in this.messages"
+        >{{ message }}</p>
     </div>
 </template>
 
 <script>
   export default {
     name: "ValidateMessageComponent",
-    props: ['messages']
+    props: {
+      messages: {
+        type: Array,
+        default: () => {
+          return []
+        }
+      }
+    }
   }
 </script>
 

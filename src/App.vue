@@ -4,9 +4,7 @@
     <div class="wrapper-layout" v-else>
       <Header/>
       <main class="main-layout">
-        <keep-alive>
           <router-view></router-view>
-        </keep-alive>
       </main>
       <Footer/>
     </div>
@@ -14,8 +12,8 @@
 </template>
 
 <script>
-import Header from "@/components/HeaderComponent";
-import Footer from "@/components/FooterComponent";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Loader from "@/components/ui/Loader";
 
 export default {

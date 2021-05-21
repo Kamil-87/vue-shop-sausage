@@ -14,7 +14,7 @@
                 <CartItem
                     v-for="(item, index) in cartList"
                     :key="item.id"
-                    :imageUrl="item.img ? imageUrl + item.img : '/images/no_photo.png'"
+                    :imageUrl="item.img ? require(`@/assets/images/products/${item.img}`) : require('@/assets/images/no_photo.png')"
                     :name = item.name
                     :price = item.price
                     :unit = item.unit

@@ -4,43 +4,43 @@
             :carousel-data="carouselData"
         />-->
 
-        <PromoComponent/>
+        <Promo />
 
-        <NewArrivalComponent/>
+        <NewArrival />
 
-        <BenefitListComponent/>
+        <BenefitList />
 
-        <PromotionsComponent/>
+        <Promotions />
 
-        <ReviewsComponent/>
+        <Reviews />
 
-        <FeedbackComponent/>
+        <Feedback />
     </div>
 
 </template>
 
 <script>
-import PromoComponent from "../components/home-components/PromoComponent";
-import BenefitListComponent from "../components/home-components/BenefitListComponent";
-import ReviewsComponent from "../components/home-components/ReviewsComponent";
-import FeedbackComponent from "../components/home-components/FeedbackComponent";
-import PromotionsComponent from "../components/home-components/PromotionsComponent";
-import NewArrivalComponent from "../components/home-components/NewArrivalComponent";
+import Promo from "../components/home/Promo";
+import BenefitList from "../components/home/BenefitList";
+import Reviews from "../components/home/Reviews";
+import Feedback from "../components/home/Feedback";
+import Promotions from "../components/home/Promotions";
+import NewArrival from "../components/home/NewArrival";
 // import Carousel from "../components/Carousel";
-import ProductCardComponent from "../components/ProductCardComponent";
+import ProductCard from "../components/ProductCard";
 
 
 export default {
     name: "Home",
     components: {
         // Carousel,
-        ProductCardComponent,
-        NewArrivalComponent,
-        PromotionsComponent,
-        FeedbackComponent,
-        ReviewsComponent,
-        BenefitListComponent,
-        PromoComponent,
+        ProductCard,
+        NewArrival,
+        Promotions,
+        Feedback,
+        Reviews,
+        BenefitList,
+        Promo,
     },
     data() {
         return {

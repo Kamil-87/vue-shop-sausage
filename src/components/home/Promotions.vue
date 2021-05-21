@@ -4,7 +4,7 @@
         <div class="promotions__box">
             <article v-for="item in 4">
                 <a href="#" class="promotions__img">
-                    <img src="/images/products/Polukopchyonnaya_Armavarskaya_GOST.png"
+                    <img src="@/assets/images/products/Polukopchyonnaya_Armavarskaya_GOST.png"
                          alt="Полукопчённая Армаварская ГОСТ">
                 </a>
                 <div>
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-    name: 'PromotionsComponent',
+    name: 'Promotions',
 
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
     <div class="new-arrival">
-        <Loader v-if="loading" />
-        <div v-else>
+<!--        <Loader v-if="loading" />-->
+        <div>
             <Notification
                 v-if="messages.length"
                 :messages="messages"
@@ -9,17 +9,17 @@
             <div class="new-arrival__head">
                 <h2 class="new-arrival__title">Новое поступление</h2>
                 <div class="new-arrival__arrows">
-                    <button @click="prevSlide" class="btn-prev" :class="{disabled: isDisabled}" :style="{background: 'url(\'/icons/arrow-left.svg\') 0 0 / 100% no-repeat'}">🠐</button>
-                    <button @click="nextSlide" class="btn-next" :style="{background: 'url(\'/icons/arrow-right.svg\') 0 0 / 100% no-repeat'}">🠒</button>
+                    <button @click="prevSlide" class="btn-prev" :class="{disabled: isDisabled}" :style="{background: 'url(\'@/assets/icons/arrow-left.svg\') 0 0 / 100% no-repeat'}">🠐</button>
+                    <button @click="nextSlide" class="btn-next" >🠒</button>
                 </div>
             </div>
 
             <VueSlickCarousel v-bind="newProductsSliderSettings" ref="slider">
                 <ProductCardComponent
-                    v-for="item in newProductList"
-                    :key="'new-product-' + item.id"
+                    v-for="item in sliderItems"
+                    :key="item.id"
                     :product-data="item"
-                    :image-url="item.img ? imageUrl + item.img : '/images/no_photo.png'"
+                    :image-url="item.img ? require('@/assets/images/products/' + item.img) : require('@/assets/images/no_photo.png')"
                     @addToCart="addToCart"
                 />
             </VueSlickCarousel>
@@ -28,14 +28,14 @@
 </template>
 
 <script>
-import ProductCardComponent from "../ProductCardComponent";
+import ProductCardComponent from "../ProductCard";
 import {mapGetters, mapActions} from "vuex/dist/vuex.mjs";
 import Loader from "../ui/Loader";
 import SuccessMessageComponent from "../SuccessMessageComponent";
 import Notification from "../ui/Notification";
 
 export default {
-    name: 'NewArrivalComponent',
+    name: 'NewArrival',
     components: {Notification, SuccessMessageComponent, Loader, ProductCardComponent},
     data() {
         return {
@@ -55,13 +55,13 @@ export default {
                 infinite: false,
             },
             isDisabled: false,
-            loading: true,
+            // loading: true,
             messages: [],
         }
     },
     computed: {
         imageUrl() {
-            return `/images/products/`
+            return `@/assets/images/products/`
         },
         ...mapGetters([
             'PRODUCTS', 'PRODUCTS_NEWS'

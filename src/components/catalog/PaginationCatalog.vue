@@ -8,7 +8,7 @@
             <ProductCardComponent
                 v-for="item in paginatedData"
                 :key="item.id"
-                :imageUrl="item.img ? imageUrl + item.img : '/images/no_photo.png'"
+                :imageUrl="item.img ? require(`@/assets/images/products/${item.img}` ) : require('@/assets/images/no_photo.png')"
                 :product-data="item"
                 @addToCart="addToCart(item)"
             />
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import ProductCardComponent from "../ProductCardComponent";
+import ProductCardComponent from "../ProductCard";
 import { mapActions } from "vuex/dist/vuex.mjs";
 import SuccessMessageComponent from "../SuccessMessageComponent";
 import Notification from "../ui/Notification";
@@ -64,7 +64,7 @@ export default {
     },
     computed: {
         imageUrl() {
-            return `/images/products/`
+            return `@/assets/images/products/`
         },
         pages() {
             return Math.ceil(this.catalogData.length / 9)

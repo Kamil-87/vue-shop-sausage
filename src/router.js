@@ -1,4 +1,7 @@
+import Vue from 'vue'
 import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
 
 import Home from './views/Home'
 import About from './views/About';
@@ -7,9 +10,9 @@ import Contacts from "./views/Contacts";
 import Delivery from "./views/Delivery";
 import Payment from "./views/Payment";
 import Catalog from "./views/Catalog";
-import ProductPage from "./views/ProductPage";
+import ProductPage from "./views/Product";
 import Cart from "./views/Cart";
-import PageNotFound from "./views/PageNotFound";
+import PageNotFound from "./views/NotFound";
 import Login from "./views/Login";
 import Checkout from "./views/Checkout";
 import Register from "./views/Register";

@@ -4,7 +4,7 @@
 
         <div class="flex-box">
             <div class="left">
-<!--                <img :src="`/images/products/${product.img}`" :alt="product.name">-->
+                <img :src="require(`@/assets/images/products/${product.img}`)" :alt="product.name">
             </div>
             <div class="right product">
                 <h1 class="product__title">{{ product.name }}</h1>

@@ -34,7 +34,7 @@
 
 <script>
 export default {
-    name: 'FooterComponent',
+    name: 'Footer',
     data() {
         return {
             date: new Date()

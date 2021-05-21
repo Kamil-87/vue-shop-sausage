@@ -46,7 +46,7 @@
         <div class="header__bottom container">
             <div class="header__logo">
                 <router-link to="/" class="navbar-brand">
-                    <img src="/images/logo.png" alt="Logo">
+                    <img src="@/assets/images/logo.png" alt="Logo">
                 </router-link>
             </div>
 
@@ -62,18 +62,18 @@
                         class="header__search-btn"
                         @click="search(searchValue)"
                     >
-                        <img src="/icons/search_white.svg" alt="найти">
+                        <img src="@/assets/icons/search_white.svg" alt="найти">
                     </button>
                 </div>
             </div>
 
             <div class="header__controls">
                 <router-link to="/account/history">
-                    <img src="/icons/person_black.svg" alt="аккаунт">
+                    <img src="@/assets/icons/person_black.svg" alt="аккаунт">
                 </router-link>
                 <router-link to="/cart">
                     <span class="header__cart">
-                        <img src="/icons/shopping_cart_black.svg" alt="корзина">
+                        <img src="@/assets/icons/shopping_cart_black.svg" alt="корзина">
                         <span class="header__cart-badge">{{ CART.length }}</span>
                     </span>
                     <span class="header__cart-text">{{ TOTAL_PRICE_CART }}&nbsp;руб</span>
@@ -84,10 +84,10 @@
 </template>
 
 <script>
-import {mapGetters, mapActions} from "vuex/dist/vuex.mjs";
+import {mapGetters, mapActions} from "vuex";
 
 export default {
-    name: "HeaderComponent",
+    name: "Header",
     data() {
         return ({
             searchValue: '',
@@ -123,7 +123,6 @@ export default {
         async signOut() {
             await this.signOutAction();
             await this.$router.push('/catalog');
-            // await
         }
     }
 }

@@ -11,12 +11,7 @@
 <script>
 
   export default {
-    name: 'PromoComponent',
-    data() {
-      return {
-
-      }
-    }
+    name: 'Promo'
   }
 </script>
 
@@ -24,7 +19,5 @@
 .promo-slider {
     margin-bottom: 3rem;
 }
-
-
 
 </style>
