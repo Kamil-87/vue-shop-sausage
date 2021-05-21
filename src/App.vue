@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Loader v-if="loading"/>
+    <div class="wrapper-layout" v-else>
+      <Header/>
+      <main class="main-layout">
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
+      </main>
+      <Footer/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "@/components/HeaderComponent";
+import Footer from "@/components/FooterComponent";
+import Loader from "@/components/ui/Loader";
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: {Loader, Header, Footer},
+  data() {
+    return {
+      loading: true,
+    }
+  },
+  async mounted() {
+    // вызываем запросы к бд, чтобы сохранить данные в store
+    // await this.$store.dispatch('GET_PRODUCTS');
+    // await this.$store.dispatch('GET_CATEGORIES');
+    this.loading = false
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
