@@ -19,7 +19,7 @@ export default {
 
     actions: {
         GET_CATEGORIES: async (context) => {
-            axios.get('/api/category')
+            axios.get('http://shop-sausage/api/category')
                 .then(response => {
                     if (response.data.categories) {
                         context.commit('SET_CATEGORIES', response.data.categories);

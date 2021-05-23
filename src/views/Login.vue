@@ -77,5 +77,5 @@
 </script>
 
 <style lang="scss" scoped>
-    //@import "../../sass/login-register";
+
 </style>

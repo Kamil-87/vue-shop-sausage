@@ -44,7 +44,7 @@ export default {
         INCREMENT: (state, index) => {
             const cartItem = state.cart.find(item => item.id === index);
             cartItem.quantity++
-            cartItem.totalPriceProduct = cartItem.quantity * cartItem.price
+            cartItem.totalPriceProduct = cartItem.quantity * cartItem.price // изменить логику перенести в геттеры или акшины
         },
 
         DECREMENT: ( state, index) => {
@@ -98,7 +98,7 @@ export default {
 
         async API_ADD_CART ({ dispatch }, credentials) {
             await axios.get('/sanctum/csrf-cookie');
-            const answer = await axios.post('/api/basket', credentials)
+            const answer = await axios.post('http://shop-sausage/api/basket', credentials)
               .then((response) => {
                   return response;
               })

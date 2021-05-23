@@ -20,7 +20,7 @@ export default {
   actions: {
     async API_ADD_ORDER ({ commit }, credentials) {
       await axios.get('/sanctum/csrf-cookie');
-      const answer = await axios.post('/api/order', credentials)
+      const answer = await axios.post('http://shop-sausage/api/order', credentials)
         .then((response) => {
           if (response.data.order) {
             commit('SET_ORDER_CURRENT', response.data.order);

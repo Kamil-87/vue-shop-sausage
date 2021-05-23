@@ -35,8 +35,8 @@ export default {
 
   actions: {
     async SIGN_IN ({ dispatch }, credentials) {
-      await axios.get('/sanctum/csrf-cookie');
-      const answer = await axios.post('/login', credentials)
+      await axios.get('/sanctum/csrf-cookie'); // здесь случайно не нужен try catch?
+      const answer = await axios.post('http://shop-sausage/login', credentials)
         .then((response) => {
           if (response.status === 204) {
             dispatch('ME');
@@ -50,14 +50,14 @@ export default {
     },
 
     async SIGN_OUT ({ dispatch }) {
-      await axios.post('/logout');
+      await axios.post('http://shop-sausage/logout');
 
       return dispatch('ME')
     },
 
     async REGISTER ({ dispatch }, credentials) {
       await axios.get('/sanctum/csrf-cookie');
-      const answer = await axios.post('/register', credentials)
+      const answer = await axios.post('http://shop-sausage/register', credentials)
         .then((response) => {
           if (response.status === 201) {
             dispatch('ME');
@@ -72,7 +72,7 @@ export default {
 
     async UPDATE ({dispatch, state}, credentials) {
       await axios.get('/sanctum/csrf-cookie');
-      const answer = await axios.put('/api/user', credentials,)
+      const answer = await axios.put('http://shop-sausage/api/user', credentials,)
         .then((response) => {
           if (response.status === 204) {
             dispatch('ME');
@@ -86,7 +86,7 @@ export default {
     },
 
     ME ({ commit }) {
-      return axios.get('/api/user')
+      return axios.get('http://shop-sausage/api/user')
         .then((response) => {
           commit('SET_AUTHENTICATED', true);
           commit('SET_USER', response.data);

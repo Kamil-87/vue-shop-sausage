@@ -17,7 +17,7 @@ export default {
   actions: {
     async PRODUCTS_IMPORT ({dispatch, state}, credentials) {
       await axios.get('/sanctum/csrf-cookie');
-      const answer = await axios.post('/api/admin/category', credentials)
+      const answer = await axios.post('http://shop-sausage/api/admin/category', credentials)
         .then((response) => {
           return response;
         })

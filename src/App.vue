@@ -26,8 +26,8 @@ export default {
   },
   async mounted() {
     // вызываем запросы к бд, чтобы сохранить данные в store
-    // await this.$store.dispatch('GET_PRODUCTS');
-    // await this.$store.dispatch('GET_CATEGORIES');
+    await this.$store.dispatch('GET_PRODUCTS');
+    await this.$store.dispatch('GET_CATEGORIES');
     this.loading = false
   }
 }
